@@ -448,7 +448,7 @@
                 ordersEmpty.classList.add('hidden');
                 ordersTableBody.innerHTML = '';
 
-                const response = await fetch('/api/admin/orders');
+                const response = await fetch('https://nakrutka-uz.onrender.com/api/admin/orders');
                 if (!response.ok) {
                     throw new Error('Server xatosi');
                 }
@@ -673,7 +673,7 @@
         // Buyurtma holatini yangilash
         async function updateOrderStatus(status) {
             try {
-                const response = await fetch(`/api/admin/orders/${currentOrderId}`, {
+                const response = await fetch(`https://nakrutka-uz.onrender.com/api/admin/orders/${currentOrderId}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
@@ -702,7 +702,7 @@
                 servicesEmpty.classList.add('hidden');
                 servicesList.innerHTML = '';
 
-                const response = await fetch('/api/admin/services');
+                const response = await fetch('https://nakrutka-uz.onrender.com/api/admin/services');
                 if (!response.ok) {
                     throw new Error('Server xatosi');
                 }
@@ -804,7 +804,7 @@
                 
                 if (currentServiceId) {
                     // Mavjud servisni yangilash
-                    response = await fetch(`/api/admin/services/${currentServiceId}`, {
+                    response = await fetch(`https://nakrutka-uz.onrender.com/api/admin/services/${currentServiceId}`, {
                         method: 'PUT',
                         headers: {
                             'Content-Type': 'application/json'
@@ -813,7 +813,7 @@
                     });
                 } else {
                     // Yangi servis qo'shish
-                    response = await fetch('/api/admin/services', {
+                    response = await fetch('https://nakrutka-uz.onrender.com/api/admin/services', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'
@@ -843,7 +843,7 @@
             }
             
             try {
-                const response = await fetch(`/api/admin/services/${serviceId}`, {
+                const response = await fetch(`https://nakrutka-uz.onrender.com/api/admin/services/${serviceId}`, {
                     method: 'DELETE'
                 });
                 
